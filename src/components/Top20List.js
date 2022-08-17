@@ -8,11 +8,17 @@ const SongList = ({songs}) => {
         return (
             <Song
               key={song.id.attributes["im:id"]}
+              price={song["im:price"].label}
               position={index + 1}
               title={song['im:name'].label}
               artist={song['im:artist'].label}
               image={song['im:image'][1].label}
               audio={song.link[1].attributes.href}
+              song={song}
+              link={song.link[0].attributes.href}
+              rights={song.rights.label}
+              
+            
             />
           )
     })
